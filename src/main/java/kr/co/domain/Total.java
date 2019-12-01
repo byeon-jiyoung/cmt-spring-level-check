@@ -8,7 +8,6 @@ public class Total {
 	private String productName;
 	
 	public Total(int orderNumber, int customerNumber, String customerName, int productNumber, String productName) {
-		super();
 		this.orderNumber = orderNumber;
 		this.customerNumber = customerNumber;
 		this.customerName = customerName;

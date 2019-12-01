@@ -16,33 +16,32 @@
 
 	<!-- Processes application requests -->
 	<servlet>
-		<servlet-name>appServlet</servlet-name>
+		<servlet-name>shopServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context-shop.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
 	<servlet-mapping>
-		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/shop/</url-pattern>
+		<servlet-name>shopServlet</servlet-name>
+		<url-pattern>/shop/*</url-pattern>
 	</servlet-mapping>
 	
-	<!-- Processes application requests -->
 	<servlet>
-		<servlet-name>appServlet2</servlet-name>
+		<servlet-name>apiServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context2.xml</param-value>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context-api.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 		
 	<servlet-mapping>
-		<servlet-name>appServlet2</servlet-name>
-		<url-pattern>/api/</url-pattern>
+		<servlet-name>apiServlet</servlet-name>
+		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
 </web-app>

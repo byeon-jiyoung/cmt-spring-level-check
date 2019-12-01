@@ -28,7 +28,6 @@ public class CsvFileRead {
                     if (line.indexOf("식별번호") < 0) {
                         String[] field = line.split(",");
                         String fileName = csvFileList.get(i).substring(csvFileList.get(i).lastIndexOf(File.separator)+1, csvFileList.get(i).lastIndexOf("."));
-                        
                         if (fileName.equals("customer")) {
                             Customer customer = new Customer();
                             for (int j = 0; j < field.length; j++) {
