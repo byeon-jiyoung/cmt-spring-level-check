@@ -117,19 +117,25 @@
 			<scope>test</scope>
 		</dependency>    
 		
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-		<!-- json하기 위한 라이브러리 -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.5.4</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
 			<version>1.0</version>
 		</dependency>
+		
+		<dependency> <!-- 해당 한글을 변환해주는 parser -->
+			<groupId>xerces</groupId>
+		    <artifactId>xercesImpl</artifactId>
+		    <version>2.9.1</version>
+		</dependency>
 	</dependencies>
+	
     <build>
         <plugins>
             <plugin>

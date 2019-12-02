@@ -21,6 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<beans:bean id="authorityInterceptor" class="kr.co.interceptor.AuthorityInterceptor" />
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/orders"/>
+			<beans:ref bean="authorityInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 	<context:component-scan base-package="kr.co.controllerApi" />
 	
 </beans:beans>
