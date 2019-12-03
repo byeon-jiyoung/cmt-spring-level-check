@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class AuthorityInterceptor extends HandlerInterceptorAdapter {
-	private static final Logger logger = LoggerFactory.getLogger(AuthorityInterceptor.class);
+public class ApiInterceptor extends HandlerInterceptorAdapter {
+	private static final Logger logger = LoggerFactory.getLogger(ApiInterceptor.class);
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -17,7 +17,7 @@ public class AuthorityInterceptor extends HandlerInterceptorAdapter {
 		
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("Auth") != null) {
+		if(session.getAttribute("Permit") != null) {
 			return true;
 		} else {
 			response.sendRedirect(request.getContextPath()+"/shop/");

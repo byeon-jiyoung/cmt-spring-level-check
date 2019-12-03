@@ -54,12 +54,5 @@ public class Total {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-
-	@Override
-	public String toString() {
-		return "Total [orderNumber=" + orderNumber + ", customerNumber=" + customerNumber + ", customerName="
-				+ customerName + ", productNumber=" + productNumber + ", productName=" + productName + "]";
-	}
-
 	
 }

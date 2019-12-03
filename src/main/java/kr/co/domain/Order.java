@@ -30,12 +30,5 @@ public class Order { //주문
 	public void setProductNumber(int productNumber) {
 		this.productNumber = productNumber;
 	}
-
-	@Override
-	public String toString() {
-		return "Order [orderNumber=" + orderNumber + ", customerNumber=" + customerNumber + ", productNumber="
-				+ productNumber + "]";
-	}
-	
 	
 }

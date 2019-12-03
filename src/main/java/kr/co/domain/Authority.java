@@ -2,7 +2,7 @@ package kr.co.domain;
 
 public class Authority {
 	private String authorityId;
-	private String authorityPw;
+	private String authorityName;
 	
 	public String getAuthorityId() {
 		return authorityId;
@@ -10,11 +10,11 @@ public class Authority {
 	public void setAuthorityId(String authorityId) {
 		this.authorityId = authorityId;
 	}
-	public String getAuthorityPw() {
-		return authorityPw;
+	public String getAuthorityName() {
+		return authorityName;
 	}
-	public void setAuthorityPw(String authorityPw) {
-		this.authorityPw = authorityPw;
+	public void setAuthorityName(String authorityName) {
+		this.authorityName = authorityName;
 	}
 	
 }

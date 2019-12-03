@@ -1,10 +1,9 @@
 package kr.co.controllerShop;
 
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import kr.co.domain.Authority;
@@ -14,16 +13,15 @@ public class ShopController {
 	private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
 	
 	@RequestMapping(value = "orders", method = RequestMethod.GET)
-	public String shop(HttpSession session) {
+	public String shop(Model model) {
 		logger.info("shop controller");
 		
+		//Í∂åÌïúÏù¥ ÏûàÎäî Í≤ΩÏö∞ÏóêÎßå AuthorityÍ∞ùÏ≤¥ ÏÉùÏÑ±
 		Authority authority = new Authority();
 		authority.setAuthorityId("id");
+		authority.setAuthorityName("name");
 		
-		if(authority.getAuthorityId() != null) {
-			logger.info("±««—¿÷¿Ω");
-			session.setAttribute("Auth", authority);
-		}
+		model.addAttribute("Authority", authority);
 		
 		return "forward:/api/orders";
 	}

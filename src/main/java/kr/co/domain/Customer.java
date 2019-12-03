@@ -32,10 +32,4 @@ public class Customer { //고객
         this.customerName = customerName;
     }
 
-	@Override
-	public String toString() {
-		return "Customer [customerNumber=" + customerNumber + ", customerName=" + customerName + "]";
-	}
-    
-    
 }

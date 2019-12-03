@@ -2,20 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page session="false" %>
+<link href="${pageContext.request.contextPath}/resources/css/shop.css" rel="stylesheet" type="text/css" />
 <html>
 <head>
-	<title>Home</title>
+	<title>SHOP</title>
 </head>
-<style>
-	table {
-		border-collapse: collapse;
-	}
-	th, td {
-		border: 1px solid black;
-		padding: 10px;
-		text-align: center;
-	}
-</style>
 <body>
 	<h3>주문정보 출력</h3>
 	<table>

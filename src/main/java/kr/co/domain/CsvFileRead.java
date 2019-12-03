@@ -20,7 +20,7 @@ public class CsvFileRead {
         String line;
 
         Collect collect = Collect.getInstance();
-        
+
         try {
             for (int i = 0; i < csvFileList.size(); i++) {
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(csvFileList.get(i))));
@@ -28,14 +28,15 @@ public class CsvFileRead {
                     if (line.indexOf("식별번호") < 0) {
                         String[] field = line.split(",");
                         String fileName = csvFileList.get(i).substring(csvFileList.get(i).lastIndexOf(File.separator)+1, csvFileList.get(i).lastIndexOf("."));
-                        if (fileName.equals("customer")) {
+                        
+                       	if (fileName.equals("customer")) {
                             Customer customer = new Customer();
                             for (int j = 0; j < field.length; j++) {
                             	if (j == 0) {
                                     customer.setCustomerNumber(Integer.parseInt(field[j]));
                                 } else if (j == 1) {
                                     customer.setCustomerName(field[j]);
-                                    customerMap.put(Integer.parseInt(field[i]), customer);
+                                    customerMap.put(Integer.parseInt(field[j-1]), customer);
                                     collect.setCustomerMap(customerMap);
                                 }
                             }
@@ -46,7 +47,7 @@ public class CsvFileRead {
                                     product.setProductNumber(Integer.parseInt(field[j]));
                                 } else if (j == 1) {
                                     product.setProductName(field[j]);
-                                    productMap.put(Integer.parseInt(field[i]), product);
+                                    productMap.put(Integer.parseInt(field[j-1]), product);
                                     collect.setProductMap(productMap);
                                 }
                             }

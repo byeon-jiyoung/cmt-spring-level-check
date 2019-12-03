@@ -1,8 +1,8 @@
 package kr.co.controllerApi;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -18,13 +18,13 @@ import kr.co.domain.XmlFileRead;
 public class ApiController {
 	private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
 	
-	String path = System.getProperty("user.dir") + File.separator + "spring_level_check" + File.separator;
-	String[] files = {"customer.xml","product.csv","order.xml"};
-	
 	@RequestMapping(value = "orders", method = RequestMethod.GET)
-	public String api(Model model) {
+	public String api(Model model, HttpServletRequest request) {
 		logger.info("api controller");
-
+		
+		String path = request.getSession().getServletContext().getRealPath("/resources/data/");
+		String[] files = {"customer.xml","product.csv","order.csv"};
+		
 		List<String> csvFileList = new ArrayList<String>();
         List<String> xmlFileList = new ArrayList<String>();
         

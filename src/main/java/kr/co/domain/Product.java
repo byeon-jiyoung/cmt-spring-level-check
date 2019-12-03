@@ -31,11 +31,5 @@ public class Product { //상품
     public void setProductName(String productName) {
         this.productName = productName;
     }
-
-	@Override
-	public String toString() {
-		return "Product [productNumber=" + productNumber + ", productName=" + productName + "]";
-	}
-    
     
 }
